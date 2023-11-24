@@ -10,6 +10,7 @@ Utilities to help adding standalone Ansible roles to collections.
 * Clone the role to be added
 * Clone this repository next to your collection
 * Change to the collection root directory
+* Create a new branch for the change
 * Add the role content:
   ```sh
   ../collectionise-all-the-things/collectionise.sh <path/to/role> <new role name>
