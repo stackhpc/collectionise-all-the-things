@@ -40,6 +40,7 @@ if ! git_is_clean; then
   echo "ERROR: Role has uncommitted local changes"
   exit 1
 fi
+git fetch
 git checkout origin/master
 cd -
 
