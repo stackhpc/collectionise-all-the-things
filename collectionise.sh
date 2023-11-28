@@ -9,7 +9,7 @@ function git_is_clean {
   # Check for local repo changes
   # ?? is an uncommitted file, which we can ignore
   # 
-  [[ $(git status --porcelain=v1 2>/dev/null | grep -v '^\?\?' | wc -l) = 0 ]]
+  [[ $(git status --porcelain=v1 2>/dev/null | grep -v '^\?\?' | wc -l) -eq 0 ]]
 }
 
 if [[ ! -f galaxy.yml ]]; then
@@ -44,7 +44,7 @@ git fetch
 git checkout origin/master
 cd -
 
-cp -ar $REPO roles/$NAME
+cp -a $REPO roles/$NAME
 cd roles/$NAME/
 ls -la
 rm -rf .git/ .github/ LICENSE COPYING .gitignore venv meta/.galaxy_install_info *.retry ansible.cfg .travis.yml
